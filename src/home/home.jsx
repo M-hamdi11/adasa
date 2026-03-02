@@ -1,7 +1,9 @@
 import React from "react";
-import { FaSun,FaUser } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import { FaSun, FaUser } from "react-icons/fa";
 import { PiMountainsFill } from "react-icons/pi";
 import { FaSliders } from "react-icons/fa6";
+
 export default function Home() {
   return (
     <>
@@ -40,9 +42,9 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-              <a
+              <Link
                 className="btn-primary inline-flex items-center justify-center gap-2 group"
-                href="/blog"
+                to="/blog"
               >
                 <span>استكشف المقالات</span>
 
@@ -59,11 +61,11 @@ export default function Home() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="btn-secondary inline-flex items-center justify-center gap-2"
-                href="/about"
+                to="/about"
               >
                 <svg
                   className="w-5 h-5"
@@ -80,7 +82,7 @@ export default function Home() {
                 </svg>
 
                 <span>اعرف المزيد</span>
-              </a>
+              </Link>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
@@ -131,6 +133,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
       <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-orange-500/5 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,8 +152,8 @@ export default function Home() {
                 محتوى منتقى لبدء رحلة تعلمك
               </p>
             </div>
-            <a
-              href="/blog"
+            <Link
+              to="/blog"
               className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-medium transition-all duration-300 hover:-translate-y-0.5"
             >
               عرض الكل
@@ -167,16 +170,14 @@ export default function Home() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
+          
           {/* Articles */}
           <div className="space-y-8">
             {/* Article 1 */}
             <article className="group relative bg-[#161616] rounded-3xl overflow-hidden border border-[#262626] hover:border-orange-500/30 transition-all duration-500">
-              <a
-                href="/blog/mastering-golden-hour-photography"
-                className="block"
-              >
+              <Link to="/blog/mastering-golden-hour-photography" className="block">
                 <div className="grid md:grid-cols-2">
                   <div className="relative h-72 md:h-[400px] overflow-hidden">
                     <img
@@ -246,11 +247,12 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </article>
+            
             {/* Article 2 */}
             <article className="group relative bg-[#161616] rounded-3xl overflow-hidden border border-[#262626] hover:border-orange-500/30 transition-all duration-500">
-              <a href="/blog/portrait-photography-secrets" className="block">
+              <Link to="/blog/portrait-photography-secrets" className="block">
                 <div className="grid md:grid-cols-2">
                   <div className="relative h-72 md:h-[400px] overflow-hidden">
                     <img
@@ -319,11 +321,12 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </article>
+            
             {/* Article 3 */}
             <article className="group relative bg-[#161616] rounded-3xl overflow-hidden border border-[#262626] hover:border-orange-500/30 transition-all duration-500">
-              <a href="/blog/landscape-photography-guide" className="block">
+              <Link to="/blog/landscape-photography-guide" className="block">
                 <div className="grid md:grid-cols-2">
                   <div className="relative h-72 md:h-[400px] overflow-hidden">
                     <img
@@ -392,11 +395,12 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </article>
           </div>
         </div>
       </section>
+      
       <section className="py-24 bg-[#111111] relative border-y border-[#262626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -412,18 +416,18 @@ export default function Home() {
               اعثر على محتوى مصمم حسب اهتماماتك
             </p>
           </div>
+          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {/* إضاءة */}
-            <a
+            <Link
               className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-              href="/blog?category=إضاءة"
-              data-discover="true"
+              to="/blog?category=إضاءة"
               style={{ animationDelay: "0ms" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors duration-300 border border-orange-500/20 group-hover:border-transparent">
-                <FaSun className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300"/>
+                  <FaSun className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300"/>
                 </div>
                 <h3 className="font-bold text-lg text-white group-hover:text-white transition-colors duration-300 mb-1">
                   إضاءة
@@ -447,18 +451,18 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
+            
             {/* بورتريه */}
-            <a
+            <Link
               className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-              href="/blog?category=بورتريه"
-              data-discover="true"
+              to="/blog?category=بورتريه"
               style={{ animationDelay: "100ms" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-600 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors duration-300 border border-orange-500/20 group-hover:border-transparent">
-                <FaUser className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" />
+                  <FaUser className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="font-bold text-lg text-white group-hover:text-white transition-colors duration-300 mb-1">
                   بورتريه
@@ -482,18 +486,18 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
+            
             {/* مناظر طبيعية */}
-            <a
+            <Link
               className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-              href="/blog?category=مناظر طبيعية"
-              data-discover="true"
+              to="/blog?category=مناظر+طبيعية"
               style={{ animationDelay: "200ms" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors duration-300 border border-orange-500/20 group-hover:border-transparent">
-                <PiMountainsFill className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" />
+                  <PiMountainsFill className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="font-bold text-lg text-white group-hover:text-white transition-colors duration-300 mb-1">
                   مناظر طبيعية
@@ -517,18 +521,18 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
+            
             {/* تقنيات */}
-            <a
+            <Link
               className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-              href="/blog?category=تقنيات"
-              data-discover="true"
+              to="/blog?category=تقنيات"
               style={{ animationDelay: "300ms" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors duration-300 border border-orange-500/20 group-hover:border-transparent">
-                <FaSliders className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" />
+                  <FaSliders className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="font-bold text-lg text-white group-hover:text-white transition-colors duration-300 mb-1">
                   تقنيات
@@ -552,18 +556,18 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
+            
             {/* معدات */}
-            <a
+            <Link
               className="group relative block p-6 rounded-2xl bg-[#161616] border border-[#262626] overflow-hidden hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-1"
-              href="/blog?category=معدات"
-              data-discover="true"
+              to="/blog?category=معدات"
               style={{ animationDelay: "400ms" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors duration-300 border border-orange-500/20 group-hover:border-transparent">
-                <FaSun className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300"/>
+                  <FaSun className="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300"/>
                 </div>
                 <h3 className="font-bold text-lg text-white group-hover:text-white transition-colors duration-300 mb-1">
                   معدات
@@ -587,10 +591,11 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
+      
       <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-r from-orange-500/5 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -608,10 +613,9 @@ export default function Home() {
                 محتوى جديد طازج من المطبعة
               </p>
             </div>
-            <a
+            <Link
               className="group inline-flex items-center gap-2 text-orange-500 font-semibold hover:text-orange-400 transition-colors"
-              href="/blog"
-              data-discover="true"
+              to="/blog"
             >
               عرض جميع المقالات
               <svg
@@ -627,17 +631,17 @@ export default function Home() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <article
               className="group card overflow-hidden"
               style={{ animationDelay: "0ms" }}
             >
-              <a
+              <Link
                 className="block"
-                href="/blog/camera-settings-basics"
-                data-discover="true"
+                to="/blog/camera-settings-basics"
               >
                 <div className="relative h-52 overflow-hidden">
                   <img
@@ -711,16 +715,16 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </article>
+            
             <article
               className="group card overflow-hidden"
               style={{ animationDelay: "100ms" }}
             >
-              <a
+              <Link
                 className="block"
-                href="/blog/photo-composition-rules"
-                data-discover="true"
+                to="/blog/photo-composition-rules"
               >
                 <div className="relative h-52 overflow-hidden">
                   <img
@@ -794,16 +798,16 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </article>
+            
             <article
               className="group card overflow-hidden"
               style={{ animationDelay: "200ms" }}
             >
-              <a
+              <Link
                 className="block"
-                href="/blog/mobile-photography-tips"
-                data-discover="true"
+                to="/blog/mobile-photography-tips"
               >
                 <div className="relative h-52 overflow-hidden">
                   <img
@@ -879,7 +883,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </article>
           </div>
         </div>
@@ -929,17 +933,17 @@ export default function Home() {
                 <div className="flex -space-x-2 space-x-reverse">
                   <img
                     className="w-8 h-8 rounded-full border-2 border-[#161616]"
-                    alt
+                    alt="كاتب 1"
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
                   />
                   <img
                     className="w-8 h-8 rounded-full border-2 border-[#161616]"
-                    alt
+                    alt="كاتب 2"
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
                   />
                   <img
                     className="w-8 h-8 rounded-full border-2 border-[#161616]"
-                    alt
+                    alt="كاتب 3"
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
                   />
                 </div>
