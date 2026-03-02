@@ -115,7 +115,7 @@ export default function MyNavbar() {
       <NavbarMenuItem key={`${item}-${index}`}>
         <Link
           className="w-full text-white text-right justify-end py-2 text-lg"
-          href="#"
+          to={item === "الرئيسية" ? "/" : item === "المدونة" ? "/blog" : "/about"}
         >
           {item}
         </Link>
